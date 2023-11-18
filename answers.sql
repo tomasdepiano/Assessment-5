@@ -6,3 +6,5 @@ SELECT id FROM orders WHERE customer_id IN ( SELECT id FROM customers WHERE fnam
 
 -- Question 3:
 SELECT SUM(num_cupcakes) AS sum FROM orders WHERE processed = FALSE;
+
+-- Question 4:
