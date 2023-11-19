@@ -1,11 +1,18 @@
-import { Op } from 'sequelize';
-import { Animal, Human } from './model.js';
+import { Op } from "sequelize";
+import { Animal, Human } from "./model.js";
 
 // Get the human with the primary key 2
-export const query1 = null;
+export const query1 = await Human.findByPk(2);
+console.log(query1);
 
 // Get the first animal whose species is "fish"
-export const query2 = null;
+export const query2 = await Animal.findOne({
+  where: {
+    species: "fish",
+  },
+});
+
+console.log(query2);
 
 // Get all animals belonging to the human with primary key 5
 export const query3 = null;

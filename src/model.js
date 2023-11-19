@@ -10,7 +10,7 @@ export class Human extends Model {
   }
 
   getFullName() {
-    // TODO: Implement this method
+    return `${this.fname} ${this.lname}`;
   }
 }
 
@@ -26,7 +26,7 @@ Human.init(
       allowNull: false,
     },
     lname: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
@@ -37,6 +37,7 @@ Human.init(
   {
     modelName: "human",
     sequelize: db,
+    timestamps: false,
   }
 );
 
@@ -49,7 +50,7 @@ export class Animal extends Model {
 Animal.init(
   {
     animalId: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
     },
@@ -62,15 +63,18 @@ Animal.init(
       allowNull: false,
     },
     birthyear: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
     },
   },
   {
     modelName: "animals",
     sequelize: db,
+    timestamps: false,
   }
 );
 
 // TODO: Define Relationship
+Animal.belongsTo(Human, { foreignKey: "human_id" });
+Human.hasMany(Animal, { foreignKey: "human_id" });
 
 export default db;
