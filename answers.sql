@@ -8,3 +8,4 @@ SELECT id FROM orders WHERE customer_id IN ( SELECT id FROM customers WHERE fnam
 SELECT SUM(num_cupcakes) AS sum FROM orders WHERE processed = FALSE;
 
 -- Question 4:
+SELECT name,SUM(num_cupcakes) FROM cupcakes LEFT JOIN orders ON cupcakes.id = orders.cupcake_id GROUP BY name ORDER BY name ASC; 

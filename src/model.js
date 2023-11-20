@@ -16,7 +16,7 @@ export class Human extends Model {
 
 Human.init(
   {
-    humanId: {
+    human_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
@@ -49,7 +49,7 @@ export class Animal extends Model {
 
 Animal.init(
   {
-    animalId: {
+    animal_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -62,7 +62,7 @@ Animal.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    birthyear: {
+    birth_year: {
       type: DataTypes.INTEGER,
     },
   },
