@@ -3,6 +3,7 @@ import { Animal, Human } from "./model.js";
 
 // Get the human with the primary key 2
 export const query1 = await Human.findByPk(2);
+
 console.log(query1);
 
 // Get the first animal whose species is "fish"
@@ -49,6 +50,7 @@ export const query6 = await Animal.findAll({
 });
 
 console.log(query6);
+
 // Get all the animals with species "fish" OR "rabbit"
 export const query7 = await Animal.findAll({
   where: {
