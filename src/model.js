@@ -67,14 +67,14 @@ Animal.init(
     },
   },
   {
-    modelName: "animals",
+    modelName: "animal",
     sequelize: db,
     timestamps: false,
   }
 );
 
 // TODO: Define Relationship
-Animal.belongsTo(Human, { foreignKey: "humanId" });
 Human.hasMany(Animal, { foreignKey: "humanId" });
+Animal.belongsTo(Human, { foreignKey: "humanId" });
 
 export default db;
